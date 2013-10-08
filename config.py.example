@@ -1,0 +1,12 @@
+# Twitter
+twitter = {}
+twitter['username'] = ""
+twitter['consumerKey'] = ""
+twitter['consumerSecret'] = ""
+twitter['accessToken'] = ""
+twitter['accessTokenSecret'] = ""
+
+# MongoDB
+mongodb = {}
+mongodb['username'] = ""
+

@@ -1,6 +1,10 @@
 # Project configuration files
 config.py
 
+# Logs (for testing purposes)
+logs/
+
+
 # Python
 *.py[cod]
 

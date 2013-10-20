@@ -12,13 +12,30 @@ class GeoDigger(object):
         self.twitter = config.twitter
         self.mongodb = config.mongodb
         self.hasher = SHA256
-        # Override the namespace in your miner class.
+        self.logfile = open(config.logfile, "a+")
+        # Override the namespace in your digger class.
         self.namespace = "default"
-        logfile = open("geodigger.log", "a+")
+        # Mongo connection setup
+        conn = pymongo.Connection(self.mongodb.host,
+                self.mongodb.port)
+        db = conn[self.mongodb.database]
+        self.collection = db[self.mongodb.collection]
+        self.collection.create_index([('loc', pymongo.GEOSPHERE)])
 
     def save(self, userID, time, coordinates):
-        """Write geolocation data to the Mongo database."""
-        conn = pymongo.Connection("127.0.0.1")
+        """Write geolocation data to the Mongo database.
+           Note: coordinates should be an ordered list in [longitude,
+           latitude] format.
+        """
+        self.collection.insert({
+                'userID': userID,
+                'time': time,
+                'loc': {
+                    'type': 'Point',
+                    'coordinates': coordinates,
+                    },
+                'source': self.namespace,
+                })
 
     def sanitizeUser(self, username):
         """Return a sanitized unique ID given a namespace and username.
@@ -28,4 +45,4 @@ class GeoDigger(object):
                     username)).hexdigest()
 
     def log(self, message):
-        logfile.write("[%s] %s", (time.asctime(), message))
+        self.logfile.write("[%s] %s\r\n", (time.asctime(), message))

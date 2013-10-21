@@ -1,5 +1,11 @@
-# Twitter
+# Variable declarations, do not edit.
+mongodb = {}
 twitter = {}
+
+# Log
+logfile = "geodigger.log"
+
+# Twitter
 twitter['username'] = ""
 twitter['consumerKey'] = ""
 twitter['consumerSecret'] = ""
@@ -7,6 +13,9 @@ twitter['accessToken'] = ""
 twitter['accessTokenSecret'] = ""
 
 # MongoDB
-mongodb = {}
+mongodb['host'] = ""
+mongodb['port'] = None  # If None, use default port
 mongodb['username'] = ""
-
+mongodb['password'] = ""
+mongodb['database'] = ""
+mongodb['collection'] = ""

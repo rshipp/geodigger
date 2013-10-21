@@ -14,12 +14,12 @@ class GeoDigger(object):
         self.hasher = SHA256
         self.logfile = open(config.logfile, "a+")
         # Override the namespace in your digger class.
-        self.namespace = "default"
+        self.namespace = "unknown"
         # Mongo connection setup
-        conn = pymongo.Connection(self.mongodb.host,
-                self.mongodb.port)
-        db = conn[self.mongodb.database]
-        self.collection = db[self.mongodb.collection]
+        conn = pymongo.Connection(self.mongodb['host'],
+                self.mongodb['port'])
+        db = conn[self.mongodb['database']]
+        self.collection = db[self.mongodb['collection']]
         self.collection.create_index([('loc', pymongo.GEOSPHERE)])
 
     def save(self, userID, time, coordinates):
@@ -45,4 +45,5 @@ class GeoDigger(object):
                     username)).hexdigest()
 
     def log(self, message):
-        self.logfile.write("[%s] %s\r\n", (time.asctime(), message))
+        self.logfile.write("[%s] %s\r\n" % (time.asctime(), message))
+        self.logfile.flush()

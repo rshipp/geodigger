@@ -29,9 +29,9 @@ class TwitterDigger(GeoDigger):
             try:
                 self.log("INFO: Connecting to Twitter streaming API.")
                 streamer.filter(locations=[-180.0,-90.0,180.0,90.0]) # Any geotagged post
-            catch ssl.SSLError as e:
+            except ssl.SSLError as e:
                 self.log("ERROR: Connection to Twitter stream timed out.")
-                self.log("ERROR: Detail - %s.", (e))
+                self.log("ERROR: Detail - %s." % (e))
 
 
 class TwitterStreamer(tweepy.StreamListener):
@@ -44,25 +44,26 @@ class TwitterStreamer(tweepy.StreamListener):
         if status.coordinates != None:
             self.count += 1
             self.digger.save(self.digger.sanitizeUser(status.user.id_str),
-                    status.coordinates['coordinates'],
-                    status.created_at)
+                    status.created_at,
+                    status.coordinates['coordinates'])
             if (self.count % 100000) == 0:
                 # Log a heartbeat message every few tweets. This is an
                 # arbitrarily chosen number which should result in one
                 # message being logged about every 40 minutes.
-                self.digger.log("INFO: Twitter status report - %d tweets recieved.", (self.count))
+                self.digger.log("INFO: Twitter status report - %d tweets recieved." %
+                       (self.count))
 
     def on_error(self, code):
-        self.digger.log("ERROR: Twitter stream responded with error %s.",
+        self.digger.log("ERROR: Twitter stream responded with error %s." %
                 (str(code)))
 
     def on_connect(self):
         self.digger.log("INFO: Connected to Twitter streaming API.")
 
     def on_disconnect(self, notice):
-        self.digger.log("ERROR: Twitter disconnect message sent - %s.",
+        self.digger.log("ERROR: Twitter disconnect message sent - %s." %
                 (notice))
 
     def on_limit(self, track):
-        self.digger.log("WARNING: Twitter stream limit reached. Undelivered tweets: %s.",
+        self.digger.log("WARNING: Twitter stream limit reached. Undelivered tweets: %s." %
                 (str(track)))

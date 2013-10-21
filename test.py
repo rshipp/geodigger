@@ -1,4 +1,4 @@
-from twitterminer import TwitterStreamer, TwitterMiner
+from twitterdigger import TwitterDigger
 
-t = TwitterMiner()
-t.mine_forever()
+t = TwitterDigger()
+t.dig_forever()

@@ -2,6 +2,7 @@
 Data mine for geolocation data using Twitter's streaming API.
 """
 
+import ssl
 import tweepy
 from geodigger import GeoDigger
 

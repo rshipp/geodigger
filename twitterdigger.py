@@ -33,6 +33,7 @@ class TwitterDigger(GeoDigger):
             except ssl.SSLError as e:
                 self.log("ERROR: Connection to Twitter stream timed out.")
                 self.log("ERROR: Detail - %s." % (e))
+                time.sleep(5) # Sleep for 5 seconds before attempting to reconnect
 
 
 class TwitterStreamer(tweepy.StreamListener):

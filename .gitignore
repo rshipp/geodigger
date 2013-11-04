@@ -4,6 +4,7 @@ config.py
 # Logs (for testing purposes)
 logs/
 *.log
+*.csv
 
 
 # Python

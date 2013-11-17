@@ -17,18 +17,29 @@ researched and put to use.
 # Technologies
 
 * [MongoDB](mongodb.md)
+
     A non-relational, document-oriented database designed to allow for
     efficient storage and searching of large datasets.
+
 * Python
+
     The tool itself is written in Python, an object-oriented interpreted
     language with a large number of community-developed extensions.
+
 * [Tweepy](tweepy.md)
+
     A Python module that allows us to use the Twitter API.
+
 * [PyMongo](pymongo.md)
+
     A Python module that allows us to use a Mongo database server.
+
 * [GeoJSON](geojson.md)
+
     A format used to encode geographical information.
+
 * [Pyramid](pyramid.md)
+
     A Python web framework used to create a web-based frontend for the
     GeoDigger project.
 

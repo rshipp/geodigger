@@ -3,7 +3,7 @@ GeoDigger
 
 # Introduction
 
-The goal of this project is to develop a tool that collects publicly available location information from social network services, such as Twitter and Foursquare. These social network services allow users to tag posts with their current location. By listening to the public streams of data that these services provide, it is possible to build a database of location information, an invaluable data that can then be used human mobility research.
+The goal of this project is to develop a tool that collects publicly available location information from social network services, such as Twitter and Foursquare. These social network services allow users to tag posts with their current location. By listening to the public streams of data that these services provide, it is possible to build a database of location information, an invaluable data for human mobility research.
 
 In order to develop a tool that would let researchers easily create datasets of location information, several existing technologies had to be researched and put to use.
 

@@ -5,6 +5,10 @@ twitter = {}
 # Log
 logfile = "geodigger.log"
 
+# Blacklisted userIDs
+# Use the format ['userID1', 'userID2', ...]
+blacklist = []
+
 # Twitter
 twitter['username'] = ""
 twitter['consumerKey'] = ""

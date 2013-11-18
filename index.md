@@ -3,16 +3,9 @@ GeoDigger
 
 # Introduction
 
-The goal of this project is to develop a tool that collects publicly 
-available location information from social network services, such as 
-Twitter and Foursquare. These social network services allow users to tag
-posts with their current location. By listening to the public streams of data 
-that these services provide, we can build a database of location information
-that can then be used to conduct human mobility studies.
+The goal of this project is to develop a tool that collects publicly available location information from social network services, such as Twitter and Foursquare. These social network services allow users to tag posts with their current location. By listening to the public streams of data that these services provide, we can build a database of location information that can then be used to conduct human mobility studies.
 
-In order to develop a tool that would let researchers easily create datasets
-of location information, several existing technologies had to be
-researched and put to use.
+In order to develop a tool that would let researchers easily create datasets of location information, several existing technologies had to be researched and put to use.
 
 # Technologies
 
@@ -36,9 +29,7 @@ researched and put to use.
 
 ## Gathering data
 
-Users interested in collecting their own data with GeoDigger would first 
-have to register for whatever social network services they want to use and 
-collect the necessary authentication information.
+Users interested in collecting their own data with GeoDigger would first have to register for whatever social network services they want to use and collect the necessary authentication information.
 
 ...
 
@@ -50,9 +41,4 @@ The GeoDigger web frontend
 
 # Extending
 
-GeoDigger was designed with extensibility in mind. A single parent class
-takes care of interfacing with the database server and sanitizing unique
-user IDs. Specialized classes, such as the TwitterDigger class, connect
-to a specific API and *** pass information to their parent *** (not sure if 
-I understood that). Adding support for additional social network service 
-APIs is straightforward - just take a look at TwitterDigger.py for example code.
+GeoDigger was designed with extensibility in mind. A single parent class takes care of interfacing with the database server and sanitizing unique user IDs. Specialized classes, such as the TwitterDigger class, connect to a specific API and *** pass information to their parent *** (not sure if I understood that). Adding support for additional social network service APIs is straightforward - just take a look at TwitterDigger.py for example code.

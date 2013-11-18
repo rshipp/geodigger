@@ -13,7 +13,7 @@ latitude and longitude:
         coordinates: [0.5, 0.5]
     }
 
-If we than instruct MongoDB to treat this as a point on a
+If we then instruct MongoDB to treat this as a point on a
 two-dimensional sphere, it allows us to run queries on our data with
 this in mind. We can define a polygon of an arbitrary size and shape by
 specifying its vertices, then pass this polygon to MongoDB and ask it to

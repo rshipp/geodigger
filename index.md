@@ -41,4 +41,6 @@ The GeoDigger web frontend
 
 # Extending
 
-GeoDigger was designed with extensibility in mind. A single parent class takes care of interfacing with the database server and sanitizing unique user IDs. Specialized classes, such as the TwitterDigger class, connect to a specific API and *** pass information to their parent *** (not sure if I understood that). Adding support for additional social network service APIs is straightforward - just take a look at TwitterDigger.py for example code.
+GeoDigger was designed with extensibility in mind. A single parent class takes care of interfacing with the database server and sanitizing unique user IDs. Specialized classes, such as the TwitterDigger class, connect to a specific API and *** pass information to their parent *** (not sure if I understood that, are we talking about polymorphism?). Adding support for additional social network service APIs is straightforward - just take a look at TwitterDigger.py for example code.
+
+*** It would be great to add a class diagram here so we can actually see the classes interface ***

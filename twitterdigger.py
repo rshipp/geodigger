@@ -3,6 +3,9 @@ Data mine for geolocation data using Twitter's streaming API.
 """
 
 import ssl
+import httplib
+import time
+
 import tweepy
 from geodigger import GeoDigger
 
@@ -34,6 +37,15 @@ class TwitterDigger(GeoDigger):
                 self.log("ERROR: Connection to Twitter stream timed out.")
                 self.log("ERROR: Detail - %s." % (e))
                 time.sleep(5) # Sleep for 5 seconds before attempting to reconnect
+            except httplib.IncompleteRead as e:
+                self.log("ERROR: Connection to Twitter stream failed.")
+                self.log("ERROR: Detail - %s." % (e))
+                time.sleep(5)
+            except:
+                # Catch-all
+                self.log("ERROR: Unknown connection error.")
+                self.log("ERROR: Detail -%s." % (e))
+                time.sleep(5)
 
 
 class TwitterStreamer(tweepy.StreamListener):

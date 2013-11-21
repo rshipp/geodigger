@@ -14,11 +14,12 @@ count = 0
 class TwitterDigger(GeoDigger):
     def __init__(self):
         super(TwitterDigger, self).__init__()
-        self.username = self.twitter['username']
-        self.key = self.twitter['consumerKey']
-        self.secret = self.twitter['consumerSecret']
-        self.atKey = self.twitter['accessToken']
-        self.atSecret = self.twitter['accessTokenSecret']
+        twitter = self.config.twitter
+        self.username = twitter['username']
+        self.key = twitter['consumerKey']
+        self.secret = twitter['consumerSecret']
+        self.atKey = twitter['accessToken']
+        self.atSecret = twitter['accessTokenSecret']
         self.namespace = "twitter"
 
     def dig_forever(self):

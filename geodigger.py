@@ -9,9 +9,8 @@ import config
 
 class GeoDigger(object):
     def __init__(self):
-        self.twitter = config.twitter
+        self.config = config
         self.mongodb = config.mongodb
-        self.hasher = SHA256
         self.logfile = open(config.logfile, "a+")
         # Override the namespace in your digger class.
         self.namespace = "unknown"
@@ -41,7 +40,7 @@ class GeoDigger(object):
         """Return a sanitized unique ID given a namespace and username.
            Uses SHA-256 (PyCrypto).
         """
-        return self.hasher.new('%s:%s' % (self.namespace,
+        return SHA256.new('%s:%s' % (self.namespace,
                     username)).hexdigest()
 
     def log(self, message):

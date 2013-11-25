@@ -1,5 +1,5 @@
 """
-A base class to use for API geolocation diggers.
+A base class to use for API geolocation data mining tools.
 """
 
 import time
@@ -10,6 +10,7 @@ import config
 class GeoDigger(object):
     def __init__(self):
         self.config = config
+        print type(config)
         self.mongodb = config.mongodb
         self.logfile = open(config.logfile, "a+")
         # Override the namespace in your digger class.

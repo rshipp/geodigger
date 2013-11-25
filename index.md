@@ -8,7 +8,8 @@ available location information from social network services, such as
 Twitter and Foursquare. These social network services allow users to tag
 posts with their current location. By listening to the public streams of
 data that these services provide, it is possible to build a database of
-location information, an invaluable data for human mobility research.
+location information, an invaluable data source for human mobility
+research.
 
 In order to develop a tool that would let researchers easily create
 datasets of location information, several existing technologies had to be
@@ -52,9 +53,12 @@ The GeoDigger web frontend
 
 GeoDigger was designed with extensibility in mind. A single parent class
 takes care of interfacing with the database server and sanitizing unique
-user IDs. Specialized classes, such as the TwitterDigger class, connect
-to a specific API and *** pass information to their parent *** (not sure
-        if I understood that, are we talking about polymorphism?).
+user IDs. Specialized child classes such as TwitterDigger take care of
+reading from a single API, using the `save()` method from the GeoDigger
+parent class to store information to a local database, and the `log()`
+method to provide timestamps for connection attempts, errors, and other
+information that might be of use.
+
 Adding support for additional social network service APIs is
 straightforward - just take a look at TwitterDigger.py for example
 code.

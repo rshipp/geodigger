@@ -6,10 +6,12 @@ Documentation To Do List
 
 ## Traditional vs streaming APIs
 ## firehose, filter
+## OAuth tokens and keys
 
 # Tweepy
 ## lack of documentation, but twitter api highly documented
 ## setting up a listener
+## OAuth
 
 # Tweepy and the TwitterStreamer class
 ## on_ methods

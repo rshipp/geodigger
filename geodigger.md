@@ -55,7 +55,7 @@ be acceptable to simply assume that privacy is not an issue for these
 users, who have chosen to opt in to publicly share their geolocation
 information. This said, an effort was still made to protect the privacy
 of these users. Each unique user identifier passed into the
-`sanitizeUser()` method of the GeoDigger class is combined with the
+`anonymizeUser()` method of the GeoDigger class is combined with the
 namespace of the child class and passed through a one-way hashing
 algorithm, SHA512. This provides us with a suitably unique identifier to
 associate with data points, while abstracting from the original ID.

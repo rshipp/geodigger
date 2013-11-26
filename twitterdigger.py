@@ -58,7 +58,7 @@ class TwitterStreamer(tweepy.StreamListener):
     def on_status(self, status):
         if status.coordinates != None:
             self.count += 1
-            self.digger.save(self.digger.sanitizeUser(status.user.id_str),
+            self.digger.save(self.digger.anonymizeUser(status.user.id_str),
                     status.created_at,
                     status.coordinates['coordinates'])
             if (self.count % 100000) == 0:

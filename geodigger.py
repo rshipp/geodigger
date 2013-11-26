@@ -36,7 +36,7 @@ class GeoDigger(object):
                 'source': self.namespace,
                 })
 
-    def sanitizeUser(self, username):
+    def anonymizeUser(self, username):
         """Return a sanitized unique ID given a namespace and username.
            Uses SHA-256 (PyCrypto).
         """

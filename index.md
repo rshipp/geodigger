@@ -23,7 +23,7 @@ researched and put to use.
 * Python:
     The tool itself is written in Python, an object-oriented interpreted
     language with a large number of community-developed extensions.
-* [Twitter APIs]:
+* [Twitter APIs](twitter.md):
     Application programming interfaces that allow applications to
     control Twitter services and access Twitter data.
 * [Tweepy](tweepy.md):

@@ -2,10 +2,14 @@ Documentation To Do List
 ========================
 
 # Twitter API
-
+Twitter is a popular microblogging platform, with over 230 million
+active users [[1]](https://about.twitter.com/company). 
+It provides a number of APIs, or application programming
+interfaces, that allow developers to use various Twitter services. 
 
 ## Traditional vs streaming APIs
 ## firehose, filter
+## Set up a developer account and create an app
 ## OAuth tokens and keys
 
 # Tweepy

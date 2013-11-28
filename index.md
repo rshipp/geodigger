@@ -43,7 +43,7 @@ project. It allows researchers to easily aggregate geotagged data points
 from social network users, and is extensible to allow collection from
 more social networks than those which have already been implemented.
 
-[[More]](geodigger.md)
+[More](geodigger.md)
 
 ## Postprocessing
 
@@ -53,7 +53,7 @@ updates, often for commecrial purposes. In order to filter out these
 posts and obtain more accurate human mobility data, a postprocessing
 tool was designed to delete suspicious posts from the database.
 
-[[More]]()
+[More]()
 
 ## GeoDigger UI
 
@@ -61,5 +61,5 @@ The GeoDigger web frontend allows researchers to filter data based on
 time, location, and other parameters, and convert raw data points in
 a database to normalized CSV output.
 
-[[More]](ui.md)
+[More](ui.md)
 

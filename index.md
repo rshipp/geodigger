@@ -1,7 +1,7 @@
 GeoDigger
 =========
 
-# Introduction
+## Introduction
 
 The goal of this project is to develop a tool that collects publicly
 available location information from social network services, such as
@@ -15,7 +15,7 @@ In order to develop a tool that would let researchers easily create
 datasets of location information, several existing technologies had to be
 researched and put to use.
 
-# Technologies
+## Technologies
 
 * [MongoDB](mongodb.md):
     A non-relational, document-oriented database designed to allow for
@@ -36,35 +36,30 @@ researched and put to use.
     A Python web framework used to create a web-based frontend for the
     GeoDigger project.
 
-# Usage
+## GeoDigger
 
-## Gathering data
+The GeoDigger Python script represents the end product of this research
+project. It allows researchers to easily aggregate geotagged data points
+from social network users, and is extensible to allow collection from
+more social networks than those which have already been implemented.
 
-Users interested in collecting their own data with GeoDigger would first
-have to register for whatever social network services they want to use
-and collect the necessary authentication information.
+[[More]](geodigger.md)
 
-...
+## Postprocessing
 
-## Viewing data
+A non-negligable amount of posts collected from these social networking
+data sources is created by "bots," software designed to post status
+updates, often for commecrial purposes. In order to filter out these
+posts and obtain more accurate human mobility data, a postprocessing
+tool was designed to delete suspicious posts from the database.
 
-The GeoDigger web frontend
+[[More]]()
 
-...
+## GeoDigger UI
 
-# Extending
+The GeoDigger web frontend allows researchers to filter data based on
+time, location, and other parameters, and convert raw data points in
+a database to normalized CSV output.
 
-GeoDigger was designed with extensibility in mind. A single parent class
-takes care of interfacing with the database server and sanitizing unique
-user IDs. Specialized child classes such as TwitterDigger take care of
-reading from a single API, using the `save()` method from the GeoDigger
-parent class to store information to a local database, and the `log()`
-method to provide timestamps for connection attempts, errors, and other
-information that might be of use.
+[[More]](ui.md)
 
-Adding support for additional social network service APIs is
-straightforward - just take a look at TwitterDigger.py for example
-code.
-
-*** It would be great to add a class diagram here so we can actually see
-the classes interface ***

@@ -1,4 +1,7 @@
-# GeoDigger class
+# GeoDigger
+
+## The GeoDigger class
+
 The GeoDigger class acts as a parent, or base class, which can be
 extended by creating derivative child classes. This parent class has
 four main functions: reading from the global configuration file and
@@ -12,6 +15,7 @@ information.
 ![GeoDigger UML diagram.](GDUML.png "GeoDigger UML diagram.")
 
 ## Configuration and constructor
+
 In order to facilitate code reuse, configuration for the tool is stored
 in a seperate file. The GeoDigger constructor reads from this file and
 sets up member variables that are used to connect to the database, write
@@ -34,6 +38,7 @@ recieves a different unique identifier than user #312 from Facebook
 (namespace "facebook").
 
 ## Saving to the database
+
 Regardless of the data source being queried, each child class needs the
 ability to save the information it gathers to a central database. The
 GeoDigger class provides this functionality with its `save()` method.
@@ -47,6 +52,7 @@ method is included in the parent class means that children need to know
 absolutely nothing about the database.
 
 ## User ID sanitizing
+
 When collecting data, it is important to ensure that each user can be
 uniquely identified and tied to his or her own data points. However, as
 is often the case in human mobility research, user privacy is a concern
@@ -61,6 +67,7 @@ algorithm, SHA512. This provides us with a suitably unique identifier to
 associate with data points, while abstracting from the original ID.
 
 ## Logging
+
 The final function of the GeoDigger class is to privide logging
 functionality. Knowing how many data points from an API have been
 dropeed due to slow network speeds, when an API connection was created,
@@ -78,3 +85,26 @@ problem by allowing child classes to write date and timestamped messages
 to a central log file whenever something of importance occurs in the
 process of reading from the API. Timestamps are added automatically, so
 child classes only need to call the logging method as `log("message")`.
+
+## Usage
+
+Users interested in collecting their own data with GeoDigger will first
+have to register for whatever social network services they want to use
+and collect the necessary authentication information.
+
+   ...
+
+
+## Extending
+
+GeoDigger was designed with extensibility in mind. A single parent class
+takes care of interfacing with the database server and sanitizing unique
+user IDs. Specialized child classes such as TwitterDigger take care of
+reading from a single API, using the `save()` method from the GeoDigger
+parent class to store information to a local database, and the `log()`
+method to provide timestamps for connection attempts, errors, and other
+information that might be of use.
+
+Adding support for additional social network service APIs is
+straightforward - just take a look at TwitterDigger.py for example
+code.

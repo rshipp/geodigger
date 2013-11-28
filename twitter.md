@@ -45,7 +45,7 @@ updates from Twitter users.
 
 ## OAuth
 Since the filter endpoint of the public streaming API requires user
-context [[6]](https://dev.twitter.com/docs/api/1.1/post/statuses/filter)),
+context [[6]](https://dev.twitter.com/docs/api/1.1/post/statuses/filter),
 an important step in establishing a connection to the API is
 authenticating as a certain user. The current version of the Twitter API
 requires applications to authenticate using OAuth, and open

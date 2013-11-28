@@ -47,7 +47,17 @@ portion of the GeoDigger application uses to collect geotagged status
 updates from Twitter users.
 
 ## OAuth
-
+Since the filter endpoint of the public streaming API requires user
+context [[6]](https://dev.twitter.com/docs/api/1.1/post/statuses/filter)),
+an important step in establishing a connection to the API is
+authenticating as a certain user. The current version of the Twitter API
+requires applications to authenticate using OAuth, and open
+authentication protocol considered more secure than the HTTP "Basic"
+authentication scheme supported by previous versions of the Twitter API
+[[7]](http://oauth.net/). OAuth authentication relies on a set of tokens
+and keys, which can be obtained by setting up a Twitter account and
+registering an application [[8]](https://dev.twitter.com/docs)
+[[9]](https://dev.twitter.com/apps).
 
 # Tweepy
 ## lack of documentation, but twitter api highly documented

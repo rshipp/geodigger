@@ -42,9 +42,12 @@ researchers is the "filter" stream, which allows developers to query for
 status updates that match a certain filter or filters. One filtering
 option limits returned statuses to only those that contain geolocation
 data [[6]](https://dev.twitter.com/docs/api/1.1/post/statuses/filter).
+This "filter" endpoint of the public streaming API is what the twitter
+portion of the GeoDigger application uses to collect geotagged status
+updates from Twitter users.
 
-## Set up a developer account and create an app
-## OAuth tokens and keys
+## OAuth
+
 
 # Tweepy
 ## lack of documentation, but twitter api highly documented

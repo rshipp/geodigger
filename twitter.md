@@ -55,3 +55,6 @@ authentication scheme supported by previous versions of the Twitter API
 and keys, which can be obtained by setting up a Twitter account and
 registering an application [[8]](https://dev.twitter.com/docs)
 [[9]](https://dev.twitter.com/apps).
+
+## User Object
+

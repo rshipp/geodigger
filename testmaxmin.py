@@ -13,7 +13,7 @@ a = coll.aggregate([
 ])
 
 for b in a['result']:
-    print "Min date: ", b['minDate'])
+    print "Min date: ", b['minDate']
 
 c = coll.aggregate([
         {"$group": {

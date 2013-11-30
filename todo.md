@@ -19,3 +19,12 @@ Documentation To Do List
 ## geojson
 ## PyMongo and BSON
 ## Aggregation
+
+# Pyramid
+## general, reasons chosen
+
+# GeoDigger UI
+## FilterEngine and FilterStorage
+## Welcome page, setup
+## Filter page
+### Filter save/load

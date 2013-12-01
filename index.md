@@ -17,9 +17,6 @@ In order to develop a tool that would let researchers easily create
 datasets of location information, several existing technologies had to be
 researched and put to use.
 
-* [MongoDB](mongodb.md):
-    A non-relational, document-oriented database designed to allow for
-    efficient storage and searching of large datasets.
 * Python:
     The tool itself is written in Python, an object-oriented interpreted
     language with a large number of community-developed extensions.
@@ -28,6 +25,9 @@ researched and put to use.
     control Twitter services and access Twitter data.
 * [Tweepy](tweepy.md):
     A Python module that allows us to use the Twitter API.
+* [MongoDB](mongodb.md):
+    A non-relational, document-oriented database designed to allow for
+    efficient storage and searching of large datasets.
 * [PyMongo](mongodb.md#pymongo):
     A Python module that allows us to use a Mongo database server.
 * [GeoJSON](geojson.md):

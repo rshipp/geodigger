@@ -1,4 +1,5 @@
-# GeoDigger
+GeoDigger
+=========
 
 ## The GeoDigger class
 

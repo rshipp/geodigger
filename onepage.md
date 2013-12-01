@@ -73,7 +73,9 @@ a database to normalized CSV output.
 
 [More](#ui)
 
-# Twitter APIs
+Twitter APIs
+============
+
 Twitter is a popular microblogging platform, with over 230 million
 active users [[1]](https://about.twitter.com/company). It provides a
 number of APIs, or application programming interfaces, that allow
@@ -314,7 +316,8 @@ given GeoJSON point.
 The GeoJSON support provided by MongoDB makes deriving useful
 geographical information from our dataset much easier.
 
-# GeoDigger
+GeoDigger
+=========
 
 ## The GeoDigger class
 

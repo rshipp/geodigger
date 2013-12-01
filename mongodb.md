@@ -16,13 +16,13 @@ from the Twitter streaming API to reach this two gigabyte storage limit.
 ## Geospatial Support
 
 
-## About PyMongo
+## PyMongo
 
 PyMongo is a well documented Python module, or library, that allows
 developers to interact with [Mongo](mongodb.md) databases
 [[1]](http://api.mongodb.org/python/current/).
 
-## PyMongo applications in GeoDigger
+### Applications in GeoDigger
 
 PyMongo is used in the GeoDigger base class to allow child classes to
 easily store correctly formatted data to a database. It is also used

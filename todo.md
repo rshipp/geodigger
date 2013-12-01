@@ -6,24 +6,15 @@ Documentation To Do List
 ## setting up a listener
 ## OAuth
 
-# Tweepy and the TwitterStreamer class
-## on_ methods
-
-# TwitterDigger class
-## constructor that sets up more config
-## dig_forever method
-### Twitter filter, geotagged + places -> only geotagged
-
-# MongoDB
-## general
-## geojson
-## PyMongo and BSON
-## Aggregation
-
-# Pyramid
-## general, reasons chosen
+# TwitterDigger
+## Tweepy and the TwitterStreamer class
+### on_ methods
+## TwitterDigger class
+### constructor that sets up more config
+### dig_forever method: Twitter filter, geotagged + places -> only geotagged
 
 # GeoDigger UI
+## Pyramid: general, reasons chosen
 ## FilterEngine and FilterStorage
 ## Welcome page, setup
 ## Filter page

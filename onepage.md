@@ -31,7 +31,7 @@ researched and put to use.
 * [MongoDB](#mongodb):
     A non-relational, document-oriented database designed to allow for
     efficient storage and searching of large datasets.
-* [PyMongo]#pymongo:
+* [PyMongo](#pymongo):
     A Python module that allows us to use a Mongo database server.
 * [GeoJSON](#geojson):
     A format used to encode geographical information.

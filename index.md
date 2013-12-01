@@ -32,7 +32,7 @@ researched and put to use.
     A Python module that allows us to use a Mongo database server.
 * [GeoJSON](geojson.md):
     A format used to encode geographical information.
-* [Pyramid](pyramid.md):
+* [Pyramid](ui.md#pyramid):
     A Python web framework used to create a web-based frontend for the
     GeoDigger project.
 

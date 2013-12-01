@@ -314,7 +314,6 @@ givern GeoJSON point.
 The GeoJSON support provided by MongoDB makes deriving useful
 geographical information from our dataset much easier.
 
-
 # GeoDigger
 
 ## The GeoDigger class
@@ -426,6 +425,24 @@ Adding support for additional social network service APIs is
 straightforward - just take a look at TwitterDigger.py for example
 code.
 
+TwitterDigger
+=============
+
+## Tweepy and the TwitterStreamer class
+### on_ methods
+
+## TwitterDigger class
+### constructor that sets up more config
+### dig_forever method: Twitter filter, geotagged + places -> only geotagged
 
 
+GeoDigger UI
+============
+
+## Pyramid
+### general, reasons chosen
+## FilterEngine and FilterStorage
+## Welcome page, setup
+## Filter page
+### Filter save/load
 

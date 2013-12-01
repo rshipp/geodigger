@@ -56,7 +56,7 @@ methods of the parent class:
             # listener recieves an error message from the streaming API.
             # It is passed an integer value representing the error code.
 
-        ...
+        # ...
 
 For more information on the parent methods available, see the tweepy
 documentation.

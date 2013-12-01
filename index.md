@@ -11,11 +11,11 @@ data that these services provide, it is possible to build a database of
 location information, an invaluable data source for human mobility
 research.
 
+## Technologies
+
 In order to develop a tool that would let researchers easily create
 datasets of location information, several existing technologies had to be
 researched and put to use.
-
-## Technologies
 
 * [MongoDB](mongodb.md):
     A non-relational, document-oriented database designed to allow for

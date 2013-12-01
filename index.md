@@ -28,7 +28,7 @@ researched and put to use.
     control Twitter services and access Twitter data.
 * [Tweepy](tweepy.md):
     A Python module that allows us to use the Twitter API.
-* [PyMongo](pymongo.md):
+* [PyMongo](mongodb.md#About_PyMongo):
     A Python module that allows us to use a Mongo database server.
 * [GeoJSON](geojson.md):
     A format used to encode geographical information.

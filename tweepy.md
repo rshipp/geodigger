@@ -36,7 +36,7 @@ authenticate to various Twitter services.
 
 ## Setting up a listener
 
-The first step in connecting to one of the avaiable Twitter streaming
+The first step in connecting to one of the available Twitter streaming
 API endpoints is to create a "Stream Listener" class that extends
 `tweepy.StreamListener`, and implements one or more of the virtual
 methods of the parent class:
@@ -45,7 +45,7 @@ methods of the parent class:
 
         def on_status(self, status):
             # This code will be executed automatically whenever the
-            # listener recieves a "Tweet," or status, from the streaming
+            # listener receives a "Tweet," or status, from the streaming
             # API. It is passed a 'status' object, which acts like a
             # Python dictionary, and includes all fields described in
             # the Twitter developer documentation for the "status"
@@ -53,7 +53,7 @@ methods of the parent class:
 
         def on_error(self, code):
             # This code will be executed automatically whenever the
-            # listener recieves an error message from the streaming API.
+            # listener receives an error message from the streaming API.
             # It is passed an integer value representing the error code.
 
         # ...
@@ -70,7 +70,7 @@ handler:
             timeout=5)
 
 The `timeout` parameter is optional, and defines the length of time, in
-seconds, for which the stream listener shoudl wait before throwing a
+seconds, for which the stream listener should wait before throwing a
 timeout exception.
 
 Finally, choose a streaming endpoint - one of `filter`, `firehose`, or

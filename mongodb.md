@@ -39,7 +39,7 @@ MongoDB stores data in a format known as BSON
 [[2]](http://bsonspec.org/), or Binary JSON [[3]](http://json.org/). This
 structured binary encoding format can very efficiently store data, but
 it is not directly compatible with Python. For this reason, the
-developers of PyMongo ship a seperate *bson* Python library with their
+developers of PyMongo ship a separate *bson* Python library with their
 PyMongo distribution. This allows users of PyMongo to access the full
 functionality of MongoDB.
 

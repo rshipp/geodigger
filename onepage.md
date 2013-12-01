@@ -57,9 +57,9 @@ API.
 
 ## Postprocessor
 
-A non-negligable amount of posts collected from these social networking
+A non-negligible amount of posts collected from these social networking
 data sources is created by "bots," software designed to post status
-updates, often for commecrial purposes. In order to filter out these
+updates, often for commercial purposes. In order to filter out these
 posts and obtain more accurate human mobility data, a postprocessing
 tool was designed to delete suspicious posts from the database.
 
@@ -99,13 +99,13 @@ streaming cap whenever necessary
 ## Public streams and the filter endpoint
 Twitter offers three streaming APIs for use by developers
 [[3]](https://dev.twitter.com/docs/streaming-apis). The first,
-which is the most useful for data minging applications, is the public
+which is the most useful for data mining applications, is the public
 stream. This API allows applications to read from a subset of all public
 data flowing through Twitter. The other streaming APIs, the user stream
 and the site stream, are geared towards developers who are writing an
 application that provides some sort of service to Twitter users. Within
 the public streaming API are three "endpoints," which are used to
-determine what messages the appliaction wishes to recieve
+determine what messages the application wishes to receive
 [[5]](https://dev.twitter.com/docs/streaming-apis/streams/public).
 The "sample" endpoint returns a small, random subset of all data, while the
 "firehose" endpoint returns all status updates that pass through
@@ -192,7 +192,7 @@ authenticate to various Twitter services.
 
 ## Setting up a listener
 
-The first step in connecting to one of the avaiable Twitter streaming
+The first step in connecting to one of the available Twitter streaming
 API endpoints is to create a "Stream Listener" class that extends
 `tweepy.StreamListener`, and implements one or more of the virtual
 methods of the parent class:
@@ -201,7 +201,7 @@ methods of the parent class:
 
         def on_status(self, status):
             # This code will be executed automatically whenever the
-            # listener recieves a "Tweet," or status, from the streaming
+            # listener receives a "Tweet," or status, from the streaming
             # API. It is passed a 'status' object, which acts like a
             # Python dictionary, and includes all fields described in
             # the Twitter developer documentation for the "status"
@@ -209,7 +209,7 @@ methods of the parent class:
 
         def on_error(self, code):
             # This code will be executed automatically whenever the
-            # listener recieves an error message from the streaming API.
+            # listener receives an error message from the streaming API.
             # It is passed an integer value representing the error code.
 
         # ...
@@ -226,7 +226,7 @@ handler:
             timeout=5)
 
 The `timeout` parameter is optional, and defines the length of time, in
-seconds, for which the stream listener shoudl wait before throwing a
+seconds, for which the stream listener should wait before throwing a
 timeout exception.
 
 Finally, choose a streaming endpoint - one of `filter`, `firehose`, or
@@ -281,7 +281,7 @@ MongoDB stores data in a format known as BSON
 [[2]](http://bsonspec.org/), or Binary JSON [[3]](http://json.org/). This
 structured binary encoding format can very efficiently store data, but
 it is not directly compatible with Python. For this reason, the
-developers of PyMongo ship a seperate *bson* Python library with their
+developers of PyMongo ship a separate *bson* Python library with their
 PyMongo distribution. This allows users of PyMongo to access the full
 functionality of MongoDB.
 
@@ -291,8 +291,8 @@ GeoJSON
 =======
 
 GeoJSON is "a format for encoding a variety of geographic data
-stuctures." [[1]](http://geojson.org/) This format, which is fully
-supported by [MongoDB](#mondodb), allows us to run extremely flexible
+structures." [[1]](http://geojson.org/) This format, which is fully
+supported by [MongoDB](#mongodb), allows us to run extremely flexible
 queries on the data that the GeoDigger tool collects. Data is saved into
 our database as a number of GeoJSON "points", each consisting of a
 latitude and longitude:
@@ -308,7 +308,7 @@ this in mind. We can define a polygon of an arbitrary size and shape by
 specifying its vertices, then pass this polygon to MongoDB and ask it to
 return all data points that fall within this polygon. Alternatively, we
 can query for all data points that lie within a certain radius of a
-givern GeoJSON point.
+given GeoJSON point.
 [[2]](http://docs.mongodb.org/manual/applications/geospatial-indexes/)
 
 The GeoJSON support provided by MongoDB makes deriving useful
@@ -324,7 +324,7 @@ four main functions: reading from the global configuration file and
 setting up member variables based on its contents, setting up a
 connection to a MongoDB database server and saving information to this
 server, sanitizing user IDs to remove identifiable information while
-retaining a unique value, and writing timestamped messages to a log file
+retaining a unique value, and writing time stamped messages to a log file
 to keep track of API connections, errors, and other possibly useful
 information.
 
@@ -333,14 +333,14 @@ information.
 ## Configuration and constructor
 
 In order to facilitate code reuse, configuration for the tool is stored
-in a seperate file. The GeoDigger constructor reads from this file and
+in a separate file. The GeoDigger constructor reads from this file and
 sets up member variables that are used to connect to the database, write
 to a log file, and read from social networking APIs. These variables are
 accessible to all methods in the GeoDigger class, as well as all
 GeoDigger subclasses, but most of them are only used by the base
 GeoDigger class. The exception is `config`, an object that represents
 all the information stored in the configuration file. Subclasses read
-API connection infotmation from attributes of this object (eg,
+API connection information from attributes of this object (eg,
 `config.twitter`). The GeoDigger constructor also sets up a connection
 to the MongoDB server defined in the configuration file, and ensures
 that a "collection" with the necessary parameters is defined on the
@@ -350,7 +350,7 @@ overridden by the child class. This variable is used to determine the
 source from which a data point originated, to facilitate querying data
 based on source. It is also used in the user ID sanitizing method to
 ensure that, for example, user #312 from Twitter (namespace "twitter")
-recieves a different unique identifier than user #312 from Facebook
+receives a different unique identifier than user #312 from Facebook
 (namespace "facebook").
 
 ## Saving to the database
@@ -358,7 +358,7 @@ recieves a different unique identifier than user #312 from Facebook
 Regardless of the data source being queried, each child class needs the
 ability to save the information it gathers to a central database. The
 GeoDigger class provides this functionality with its `save()` method.
-This method takes a unique user identifier, a timestamp (assumed to be
+This method takes a unique user identifier, a time stamp (assumed to be
 the time a specific data point was created by the user), and an ordered
 list in `[longitude, latitude]` format that tells the position from
 which the data point originated. It then inserts this information into
@@ -384,9 +384,9 @@ associate with data points, while abstracting from the original ID.
 
 ## Logging
 
-The final function of the GeoDigger class is to privide logging
+The final function of the GeoDigger class is to provide logging
 functionality. Knowing how many data points from an API have been
-dropeed due to slow network speeds, when an API connection was created,
+dropped due to slow network speeds, when an API connection was created,
 dropped (perhaps due to network errors), or resumed might be extremely
 important information. Assume for simplicity that a researcher is
 attempting to analyze data obtained over a single week. If an API
@@ -399,7 +399,7 @@ being collected during the entire week, and any analasys performed would
 be skewed due to the missing data. The GeoDigger log accounts for this
 problem by allowing child classes to write date and timestamped messages
 to a central log file whenever something of importance occurs in the
-process of reading from the API. Timestamps are added automatically, so
+process of reading from the API. Time stamps are added automatically, so
 child classes only need to call the logging method as `log("message")`.
 
 ## Usage
@@ -418,7 +418,7 @@ takes care of interfacing with the database server and sanitizing unique
 user IDs. Specialized child classes such as TwitterDigger take care of
 reading from a single API, using the `save()` method from the GeoDigger
 parent class to store information to a local database, and the `log()`
-method to provide timestamps for connection attempts, errors, and other
+method to provide time stamps for connection attempts, errors, and other
 information that might be of use.
 
 Adding support for additional social network service APIs is

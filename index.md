@@ -54,9 +54,9 @@ API.
 
 ## Postprocessor
 
-A non-negligable amount of posts collected from these social networking
+A non-negligible amount of posts collected from these social networking
 data sources is created by "bots," software designed to post status
-updates, often for commecrial purposes. In order to filter out these
+updates, often for commercial purposes. In order to filter out these
 posts and obtain more accurate human mobility data, a postprocessing
 tool was designed to delete suspicious posts from the database.
 

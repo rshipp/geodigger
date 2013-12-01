@@ -8,7 +8,7 @@ four main functions: reading from the global configuration file and
 setting up member variables based on its contents, setting up a
 connection to a MongoDB database server and saving information to this
 server, sanitizing user IDs to remove identifiable information while
-retaining a unique value, and writing timestamped messages to a log file
+retaining a unique value, and writing time stamped messages to a log file
 to keep track of API connections, errors, and other possibly useful
 information.
 
@@ -17,14 +17,14 @@ information.
 ## Configuration and constructor
 
 In order to facilitate code reuse, configuration for the tool is stored
-in a seperate file. The GeoDigger constructor reads from this file and
+in a separate file. The GeoDigger constructor reads from this file and
 sets up member variables that are used to connect to the database, write
 to a log file, and read from social networking APIs. These variables are
 accessible to all methods in the GeoDigger class, as well as all
 GeoDigger subclasses, but most of them are only used by the base
 GeoDigger class. The exception is `config`, an object that represents
 all the information stored in the configuration file. Subclasses read
-API connection infotmation from attributes of this object (eg,
+API connection information from attributes of this object (eg,
 `config.twitter`). The GeoDigger constructor also sets up a connection
 to the MongoDB server defined in the configuration file, and ensures
 that a "collection" with the necessary parameters is defined on the
@@ -34,7 +34,7 @@ overridden by the child class. This variable is used to determine the
 source from which a data point originated, to facilitate querying data
 based on source. It is also used in the user ID sanitizing method to
 ensure that, for example, user #312 from Twitter (namespace "twitter")
-recieves a different unique identifier than user #312 from Facebook
+receives a different unique identifier than user #312 from Facebook
 (namespace "facebook").
 
 ## Saving to the database
@@ -42,7 +42,7 @@ recieves a different unique identifier than user #312 from Facebook
 Regardless of the data source being queried, each child class needs the
 ability to save the information it gathers to a central database. The
 GeoDigger class provides this functionality with its `save()` method.
-This method takes a unique user identifier, a timestamp (assumed to be
+This method takes a unique user identifier, a time stamp (assumed to be
 the time a specific data point was created by the user), and an ordered
 list in `[longitude, latitude]` format that tells the position from
 which the data point originated. It then inserts this information into
@@ -68,9 +68,9 @@ associate with data points, while abstracting from the original ID.
 
 ## Logging
 
-The final function of the GeoDigger class is to privide logging
+The final function of the GeoDigger class is to provide logging
 functionality. Knowing how many data points from an API have been
-dropeed due to slow network speeds, when an API connection was created,
+dropped due to slow network speeds, when an API connection was created,
 dropped (perhaps due to network errors), or resumed might be extremely
 important information. Assume for simplicity that a researcher is
 attempting to analyze data obtained over a single week. If an API
@@ -79,11 +79,11 @@ Wednesday, when a network disruption caused the connection to be lost
 for several hours, and finally resumed on Thursday and continued without
 interruption until the end of the week, a sizeable amount of data might
 have been collected. Without a log, the researcher might assume data was
-being collected during the entire week, and any analasys performed would
+being collected during the entire week, and any analysis performed would
 be skewed due to the missing data. The GeoDigger log accounts for this
-problem by allowing child classes to write date and timestamped messages
+problem by allowing child classes to write date and time stamped messages
 to a central log file whenever something of importance occurs in the
-process of reading from the API. Timestamps are added automatically, so
+process of reading from the API. Time stamps are added automatically, so
 child classes only need to call the logging method as `log("message")`.
 
 ## Usage
@@ -102,7 +102,7 @@ takes care of interfacing with the database server and sanitizing unique
 user IDs. Specialized child classes such as TwitterDigger take care of
 reading from a single API, using the `save()` method from the GeoDigger
 parent class to store information to a local database, and the `log()`
-method to provide timestamps for connection attempts, errors, and other
+method to provide time stamps for connection attempts, errors, and other
 information that might be of use.
 
 Adding support for additional social network service APIs is

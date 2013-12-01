@@ -24,13 +24,13 @@ streaming cap whenever necessary
 ## Public streams and the filter endpoint
 Twitter offers three streaming APIs for use by developers
 [[3]](https://dev.twitter.com/docs/streaming-apis). The first,
-which is the most useful for data minging applications, is the public
+which is the most useful for data mining applications, is the public
 stream. This API allows applications to read from a subset of all public
 data flowing through Twitter. The other streaming APIs, the user stream
 and the site stream, are geared towards developers who are writing an
 application that provides some sort of service to Twitter users. Within
 the public streaming API are three "endpoints," which are used to
-determine what messages the appliaction wishes to recieve
+determine what messages the application wishes to receive
 [[5]](https://dev.twitter.com/docs/streaming-apis/streams/public).
 The "sample" endpoint returns a small, random subset of all data, while the
 "firehose" endpoint returns all status updates that pass through

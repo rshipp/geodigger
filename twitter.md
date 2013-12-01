@@ -1,4 +1,4 @@
-# Twitter API
+# Twitter APIs
 Twitter is a popular microblogging platform, with over 230 million
 active users [[1]](https://about.twitter.com/company). It provides a
 number of APIs, or application programming interfaces, that allow

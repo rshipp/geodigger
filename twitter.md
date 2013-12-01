@@ -56,5 +56,25 @@ and keys, which can be obtained by setting up a Twitter account and
 registering an application [[8]](https://dev.twitter.com/docs)
 [[9]](https://dev.twitter.com/apps).
 
-## User Object
-
+## Tweet and User objects
+The data sent to clients from the Twitter API consists of a number of
+objects, two of which are used by this project. The first object is the
+"Tweet," or status update
+[[10]](https://dev.twitter.com/docs/platform-objects/tweets).
+Tweets have a number of fields, some of which contain other embedded
+objects. The fields used by GeoDigger are "created_at", which contains a
+date and time value that is supposed to be the time the Tweet was
+created; "coordinates," which contains a [GeoJSON](geojson.md) point;
+and "user," which contains an embedded User object. User objects
+themselves have a large number of fields
+[[11]](https://dev.twitter.com/docs/platform-objects/users), but the
+only one of interest to us is the "id_str" field, which is a string
+representation of the unique integer identifier for the user who created
+the Tweet. According to the Twitter documentation for the User object,
+the integer ID number itself "is greater than 53 bits and some
+programming languages may have difficulty/silent defects in interpreting
+it." Developers are encouraged to "Use id_str for fetching the identifier
+to stay on the safe side,"
+[[11]](https://dev.twitter.com/docs/platform-objects/users) rather than
+using the "id" field on the User object and risking an integer overflow
+or other similar error.

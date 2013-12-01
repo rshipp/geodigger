@@ -1,12 +1,6 @@
 Documentation To Do List
 ========================
 
-# Tweepy
-## lack of documentation, but twitter api highly documented
-## setting up a listener
-## OAuth
-
-# TwitterDigger
 ## Tweepy and the TwitterStreamer class
 ### on_ methods
 ## TwitterDigger class

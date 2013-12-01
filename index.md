@@ -45,7 +45,14 @@ more social networks than those which have already been implemented.
 
 [More](geodigger.md)
 
-## Postprocessing
+### TwitterDigger
+
+This module adds support to GeoDigger for using the Twitter streaming
+API.
+
+[More](twitterdigger.md)
+
+## Postprocessor
 
 A non-negligable amount of posts collected from these social networking
 data sources is created by "bots," software designed to post status
@@ -53,7 +60,7 @@ updates, often for commecrial purposes. In order to filter out these
 posts and obtain more accurate human mobility data, a postprocessing
 tool was designed to delete suspicious posts from the database.
 
-[More]()
+[More](postprocessor.md)
 
 ## GeoDigger UI
 
@@ -62,4 +69,3 @@ time, location, and other parameters, and convert raw data points in
 a database to normalized CSV output.
 
 [More](ui.md)
-

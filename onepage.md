@@ -73,7 +73,7 @@ a database to normalized CSV output.
 
 [More](#ui)
 
-# Twitter API
+# Twitter APIs
 Twitter is a popular microblogging platform, with over 230 million
 active users [[1]](https://about.twitter.com/company). It provides a
 number of APIs, or application programming interfaces, that allow
@@ -395,9 +395,9 @@ Wednesday, when a network disruption caused the connection to be lost
 for several hours, and finally resumed on Thursday and continued without
 interruption until the end of the week, a sizeable amount of data might
 have been collected. Without a log, the researcher might assume data was
-being collected during the entire week, and any analasys performed would
+being collected during the entire week, and any analysis performed would
 be skewed due to the missing data. The GeoDigger log accounts for this
-problem by allowing child classes to write date and timestamped messages
+problem by allowing child classes to write date and time stamped messages
 to a central log file whenever something of importance occurs in the
 process of reading from the API. Time stamps are added automatically, so
 child classes only need to call the logging method as `log("message")`.

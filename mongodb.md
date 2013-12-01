@@ -10,8 +10,11 @@ make sure that the machine on which the server runs has a 64-bit
 processor. If this is not the case, the MongoDB server will only be able
 to store up to two gigabytes of data, which will severely limit its
 usefulness. In experiments run during the development of GeoDigger's
-Twitter functionaluty, it took approximately two days of saving data
+Twitter functionality, it took approximately two days of saving data
 from the Twitter streaming API to reach this two gigabyte storage limit.
+
+## Tables, Collections, and Indices
+
 
 ## Geospatial Support
 

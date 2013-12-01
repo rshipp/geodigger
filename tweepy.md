@@ -1,6 +1,8 @@
 Tweepy
 ======
 
+
+
 ## lack of documentation, but twitter api highly documented
-## setting up a listener
+## Setting up a listener
 ## OAuth

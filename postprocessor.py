@@ -12,20 +12,10 @@ class GeoPostProcessor(object):
         self.numDocs = 0
         self.MAXSPEED = 95
 
-    def speedLimit(self):
-        """Enforce a speed limit of 95 MPH.
-           Returns True if a record should be deleted, False otherwise.
+    def radiusOfGyration(self):
+        """Compute radius of gyration for users.
         """
-        # First, we need to convert our two lat/long points into a
-        # distance in miles.
 
-        # TODO ...
-
-        # Then, check the speed.
-        if distance/dtime > self.MAXSPEED:
-            return True
-        else:
-            return False
 
 
     def blacklistedUsers(self):

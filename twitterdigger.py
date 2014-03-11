@@ -28,7 +28,7 @@ class TwitterDigger(GeoDigger):
         auth = tweepy.OAuthHandler(self.key, self.secret)
         auth.set_access_token(self.atKey, self.atSecret)
         streamer = tweepy.Stream(auth=auth,
-                listener=TwitterStreamer(self),
+                listener=TwitterStreamListener(self),
                 timeout=5)
         while True:
             try:
@@ -49,9 +49,9 @@ class TwitterDigger(GeoDigger):
                 time.sleep(5)
 
 
-class TwitterStreamer(tweepy.StreamListener):
+class TwitterStreamListener(tweepy.StreamListener):
     def __init__(self, digger):
-        super(TwitterStreamer, self).__init__()
+        super(TwitterStreamListener, self).__init__()
         self.count = 0
         self.digger = digger
 

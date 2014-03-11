@@ -56,6 +56,12 @@ class TwitterStreamListener(tweepy.StreamListener):
         self.digger = digger
 
     def on_status(self, status):
+        # Do some filtering first.
+        if int(status.user.friends_count) == 0:
+            return
+        elif str(status.user.screen_name[-3:].lower()) == "bot":
+            return
+        # Save geotagged posts.
         if status.coordinates != None:
             self.count += 1
             self.digger.save(self.digger.anonymizeUser(status.user.id_str),

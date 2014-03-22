@@ -1,13 +1,11 @@
-"""
-Data mine for geolocation data using Twitter's streaming API.
-"""
+"""Collect location data using Twitter's streaming API."""
 
 import ssl
 import httplib
 import time
 
 import tweepy
-from geodigger import GeoDigger
+from geodigger.geodigger import GeoDigger
 
 count = 0
 

@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+
+from geodigger import *
+
+def main():
+    # argparse
+    parser = argparse.ArgumentParser(
+            description="Collect and filter location information from \
+                social network services.",
+            epilog = "report bugs to: \
+                https://github.com/GeoDigger/geodigger/issues",
+    )
+#    parser.add_argument('a', metavar='A', type=str,
+#                       help='')
+    parser.add_argument('--source', dest='source', default='Twitter',
+                       help='the social network from which to collect data')
+    parser.add_argument('--list', action=ListAction, nargs='?',
+                       help='list available sources')
+    args = parser.parse_args()
+
+    if args.source in getSources():
+        # Start collecting data
+        digger = getClasses()[args.source]()
+        digger.dig_forever()
+        parser.exit(0)
+    else:
+        parser.exit(1, "Source '%s' not found.\n" % args.source)
+
+# Functions
+def getSources():
+    # Get a list of all available mining sources
+    return [ str(s).split('.')[-2].split('Digger')[-2] 
+                for s in geodigger.GeoDigger.__subclasses__() ]
+
+def getClasses():
+    # Get a dictionary relating all sources to classes
+    classes = dict()
+    [ classes.__setitem__(str(c).split('.')[-2].split('Digger')[-2], c)
+            for c in geodigger.GeoDigger.__subclasses__() ]
+    return classes
+
+# List action
+class ListAction(argparse.Action):
+    def __call__(self, parser, namespace, values, option_string=None):
+        print("Available sources:")
+        print('  ' + '\n  '.join(getSources()))
+        parser.exit()
+
+if __name__ == "__main__":
+    main()

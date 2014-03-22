@@ -14,7 +14,7 @@ setup(
     name='geodigger',
     version='0.1',
     packages=['geodigger'],
-    scripts=['geodigger/geodigger'],
+    scripts=['tools/geodigger'],
     include_package_data=True,
     install_requires=requires,
     license='BSD New',

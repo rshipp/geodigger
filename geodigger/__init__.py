@@ -1,6 +1,6 @@
 __all__ = [
-        "GeoDigger",
-        "TwitterDigger",
+        "geodigger",
+        "twitterdigger",
         # Add your custom class here.
-        # Make sure the name ends in 'Digger'.
+        # Make sure the *class* name ends in 'Digger'.
 ]

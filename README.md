@@ -8,14 +8,14 @@ Collect and filter location information from social network services.
 GeoDigger has only been tested on Linux. It may or may not work on
 Windows or Mac OSX systems.
 
-Python 2.7
-MongoDB Server >= 2.4.6
+* Python 2.7
+* MongoDB Server >= 2.4.6
 
 ### Python Modules
 
-Tweepy >= 2.1
-PyCrypto >= 2.6.1
-PyMongo >= 2.6.3
+* Tweepy >= 2.1
+* PyCrypto >= 2.6.1
+* PyMongo >= 2.6.3
 
 ## Installation
 

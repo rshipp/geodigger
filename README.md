@@ -41,6 +41,7 @@ To install the GeoDigger script and libraries, use:
   and log files. GeoDigger will try to create the log file if it does
   not already exist.
 
+
     geodigger --conf MY_CONFIG_FILE --log MY_LOG_FILE
 
 ## Documentation and Papers

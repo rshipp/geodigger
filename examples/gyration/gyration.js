@@ -31,6 +31,7 @@ function gyration(points) {
     return Math.sqrt(1./points.length*sum);
 }
 
-print(haversine([[1, 2], [3, 4]]));
-print(centroid( [{point: [1.0, 2.0], frequency: 5.0}, {point: [3.0, 4.0], frequency: 4.0}] ));
-print(gyration( [{point: [1.0, 2.0], frequency: 5.0}, {point: [3.0, 4.0], frequency: 4.0}] ));
+// Tests
+//print(haversine([[1, 2], [3, 4]]));
+//print(centroid( [{point: [1.0, 2.0], frequency: 5.0}, {point: [3.0, 4.0], frequency: 4.0}] ));
+//print(gyration( [{point: [1.0, 2.0], frequency: 5.0}, {point: [3.0, 4.0], frequency: 4.0}] ));

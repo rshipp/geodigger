@@ -1,10 +1,11 @@
 # Project configuration files
 config.py
 
-# Logs (for testing purposes)
+# Logs and dumps
 logs/
+dumps/
 *.log
-*.csv
+*.zip
 
 
 # Python

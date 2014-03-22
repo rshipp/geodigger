@@ -7,7 +7,6 @@ dumps/
 *.log
 *.zip
 
-
 # Python
 *.py[cod]
 

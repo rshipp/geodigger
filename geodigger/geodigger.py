@@ -3,16 +3,16 @@
 import time
 import pymongo
 from Crypto.Hash import SHA256
-from geodigger import config
 
 class GeoDigger(object):
-    def __init__(self):
+    def __init__(self, config, logfile):
         self.config = config
-        self.mongodb = config.mongodb
-        self.logfile = open(config.logfile, "a+")
+        self.mongodb = config['mongodb']
+        self.logfile = open(logfile, "a+")
         # Override the namespace in your child class.
         self.namespace = "unknown"
         # Mongo connection setup
+        if self.mongodb['port'] == '': self.mongodb['port'] = None
         conn = pymongo.Connection(self.mongodb['host'],
                 self.mongodb['port'])
         db = conn[self.mongodb['database']]

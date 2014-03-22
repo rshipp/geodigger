@@ -5,15 +5,14 @@ import httplib
 import time
 
 import tweepy
-from geodigger.geodigger import GeoDigger
+from geodigger import GeoDigger
 
 count = 0
 
 class TwitterDigger(GeoDigger):
-    def __init__(self):
-        super(TwitterDigger, self).__init__()
-        twitter = self.config.twitter
-        self.username = twitter['username']
+    def __init__(self, config, logfile):
+        super(TwitterDigger, self).__init__(config, logfile)
+        twitter = self.config['twitter']
         self.key = twitter['consumerKey']
         self.secret = twitter['consumerSecret']
         self.atKey = twitter['accessToken']

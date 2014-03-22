@@ -1,6 +1,18 @@
 #!/usr/bin/env python
 
+import os
+import argparse
+try:
+    import ConfigParser
+except ImportError:
+    import configparser as ConfigParser
+import pymongo
+
 from geodigger import *
+
+# Default config values
+LOGFILE = os.path.join(os.getcwd(), 'geodigger.log')
+CONFIGFILE = os.path.join(os.getcwd(), 'geodigger.conf')
 
 def main():
     # argparse
@@ -10,32 +22,60 @@ def main():
             epilog = "report bugs to: \
                 https://github.com/GeoDigger/geodigger/issues",
     )
-#    parser.add_argument('a', metavar='A', type=str,
-#                       help='')
+    parser.add_argument('--log', dest='logfile', default=LOGFILE,
+                       help='file to store logs, default=%s' % LOGFILE)
+    parser.add_argument('--config', dest='configfile', default=CONFIGFILE,
+                       help='geodigger configuration file, default=%s' % CONFIGFILE)
     parser.add_argument('--source', dest='source', default='Twitter',
                        help='the social network from which to collect data')
     parser.add_argument('--list', action=ListAction, nargs='?',
                        help='list available sources')
     args = parser.parse_args()
 
+    # Handle config and log file options
+    try:
+        f = open(args.logfile, 'w+')
+        f.close()
+    except IOError as e:
+        parser.exit(1, str(e) + '\n')
+    try:
+        f = open(args.configfile, 'r+')
+        f.close()
+    except IOError as e:
+        parser.exit(1, str(e) + '\n')
+
+    # Translate the config file into a dictionary.
+    c = ConfigParser.ConfigParser()
+    c.read(args.configfile)
+    [ c._sections[s].__delitem__('__name__') for s in c._sections ]
+    config = c._sections
+
+    # Start collecting data
     if args.source in getSources():
-        # Start collecting data
-        digger = getClasses()[args.source]()
-        digger.dig_forever()
-        parser.exit(0)
+        try:
+            digger = getClasses()[args.source](config, args.logfile)
+            digger.dig_forever()
+        except KeyError as e:
+            print("KeyError: " + str(e.message))
+            print("Encountered a fatal error, quitting.")
+            print("Perhaps you need to fix your config file?")
+        except pymongo.errors.PyMongoError as e:
+            print("PyMongoError: " + str(e.message))
+            print("Encountered a fatal error, quitting.")
+            print("Check the 'mongo' section of your config file, and make sure your server is available.")
     else:
         parser.exit(1, "Source '%s' not found.\n" % args.source)
 
 # Functions
 def getSources():
     # Get a list of all available mining sources
-    return [ str(s).split('.')[-2].split('Digger')[-2] 
+    return [ str(s).split('.')[-1].replace("'>",'').split('Digger')[-2]
                 for s in geodigger.GeoDigger.__subclasses__() ]
 
 def getClasses():
     # Get a dictionary relating all sources to classes
     classes = dict()
-    [ classes.__setitem__(str(c).split('.')[-2].split('Digger')[-2], c)
+    [ classes.__setitem__(str(c).split('.')[-1].replace("'>",'').split('Digger')[-2], c)
             for c in geodigger.GeoDigger.__subclasses__() ]
     return classes
 

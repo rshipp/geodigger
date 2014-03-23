@@ -2,8 +2,8 @@ import pymongo
 from bson.son import SON
 
 conn = pymongo.Connection('127.0.0.1')
-db = conn['geodigger_test']
-coll = db['data_test']
+db = conn['geodigger']
+coll = db['data']
 
 
 # dump all data

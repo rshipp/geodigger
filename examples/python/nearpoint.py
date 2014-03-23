@@ -2,12 +2,12 @@ import pymongo
 from bson.son import SON
 
 conn = pymongo.Connection('127.0.0.1')
-db = conn['geodigger_test']
-coll = db['data_test']
+db = conn['geodigger']
+coll = db['data']
 
-#coll.create_index([('loc', pymongo.GEOSPHERE)])
 coll.ensure_index([(u'loc', pymongo.GEOSPHERE)])
 
+# Select records within 10000m of point [-105.2, 39.7]
 c = {"loc":
             SON([
                 ("$near", SON([

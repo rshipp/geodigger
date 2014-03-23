@@ -2,8 +2,8 @@ import pymongo
 from bson.son import SON
 
 conn = pymongo.Connection('127.0.0.1')
-db = conn['geodigger_test']
-coll = db['data_test']
+db = conn['geodigger']
+coll = db['data']
 
 a = coll.aggregate([
         {"$group": {
@@ -11,7 +11,7 @@ a = coll.aggregate([
             "number": {"$sum": 1}
         }},
         {"$sort": {"number": -1}},
-        {"$limit": 67487} # users/10
+        {"$limit": 100}
 ])
 
 for b in a['result']:

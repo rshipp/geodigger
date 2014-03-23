@@ -22,6 +22,7 @@ Windows or Mac OSX systems.
 To install the GeoDigger script and libraries, use:
 
     git clone git://github.com/GeoDigger/geodigger.git
+    cd geodigger
     sudo python setup.py install
 
 ## Usage

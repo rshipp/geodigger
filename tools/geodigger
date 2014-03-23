@@ -23,9 +23,9 @@ def main():
                 https://github.com/GeoDigger/geodigger/issues",
     )
     parser.add_argument('--log', dest='logfile', default=LOGFILE,
-                       help='file to store logs, default=%s' % LOGFILE)
+                       help='file to store logs, default=geodigger.log')
     parser.add_argument('--config', dest='configfile', default=CONFIGFILE,
-                       help='geodigger configuration file, default=%s' % CONFIGFILE)
+                       help='geodigger configuration file, default=geodigger.conf')
     parser.add_argument('--source', dest='source', default='Twitter',
                        help='the social network from which to collect data')
     parser.add_argument('--list', action=ListAction, nargs='?',

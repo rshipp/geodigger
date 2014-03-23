@@ -1,7 +1,7 @@
 TwitterDigger
 =============
 
-## Tweepy and the TwitterStreamer class
+## Tweepy and the TwitterStreamListener class
 ### on_ methods
 
 ## TwitterDigger class

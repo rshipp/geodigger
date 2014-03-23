@@ -26,23 +26,23 @@ To install the GeoDigger script and libraries, use:
 
 ## Usage
 
-* Make sure you have a MongoDB server installed and running. Running
-  GeoDigger on the same machine as the database server is easiest, and
-  is recommended.
+1. Make sure you have a MongoDB server installed and running. Running
+   GeoDigger on the same machine as the database server is easiest, and
+   is recommended.
 
-* Obtain all the developer access secrets for the social networks you want to
-  use. (Currently, only Twitter is supported.)
+2. Obtain all the developer access secrets for the social networks you want to
+   use. (Currently, only Twitter is supported.)
 
-* Create a configuration file. See
-  [examples/conf/geodigger.conf](examples/conf/geodigger.conf) for an
-  example.
+3. Create a configuration file. See
+   [examples/conf/geodigger.conf](examples/conf/geodigger.conf) for an
+   example.
 
-* Run the GeoDigger script, passing in the paths to your configuration
-  and log files. GeoDigger will try to create the log file if it does
-  not already exist.
+4. Run the GeoDigger script, passing in the paths to your configuration
+   and log files. GeoDigger will try to create the log file if it does
+   not already exist.
 
+    `geodigger --conf MY_CONFIG_FILE --log MY_LOG_FILE`
 
-    geodigger --conf MY_CONFIG_FILE --log MY_LOG_FILE
 
 ## Documentation and Papers
 
@@ -65,5 +65,5 @@ them to `rshipp at mines dot edu`.
 ## Hacking
 
 If you want to add functionality, such as support for a new social
-network, see the [extending](docs/geodigger.md#Extending) section of the
+network, see the [extending](docs/geodigger.md#extending) section of the
 GeoDigger documentation. Pull requests are welcome.

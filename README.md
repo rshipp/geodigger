@@ -3,6 +3,8 @@ GeoDigger
 
 Collect and filter location information from social network services.
 
+[Read more](docs/index.md)
+
 ## Requirements
 
 GeoDigger has only been tested on Linux. It may or may not work on

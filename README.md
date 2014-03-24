@@ -52,8 +52,8 @@ behind the project, and explains how to extend GeoDigger functionality.
 You can read the documentation online [here](docs/index.md) (or, if you
 prefer a single page, try [this](docs/onepage.md)).
 
-GeoDigger is also the subject of an ongoing research project; links to
-reports will be provided as they become available.
+GeoDigger is the product of an ongoing research project; links to
+technical reports will be provided as they become available.
 
 ## Support
 

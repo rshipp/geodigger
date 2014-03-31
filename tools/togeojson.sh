@@ -8,8 +8,10 @@ cat << EOF > "$filename.geojson"
     "coordinates": [[
 EOF
 sed 's/ /\n/g; s/,/, /g;' "$filename.csv" | sed 's/^/        [/; s/$/],/' >> "$filename.geojson"
+sed -i '$s/,$//' "$filename.geojson"
 cat << EOF >> "$filename.geojson"
 
     ]]
 }
 EOF
+

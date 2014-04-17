@@ -19,7 +19,7 @@ class GeoDigger(object):
         self.collection = db[self.mongodb['collection']]
         self.collection.create_index([('loc', pymongo.GEOSPHERE)])
 
-    def save(self, userID, time, coordinates):
+    def save(self, userID, time, coordinates, text=''):
         """Write geolocation data to the Mongo database.
         Note: coordinates should be an ordered list in [longitude, latitude] format.
         """
@@ -31,6 +31,7 @@ class GeoDigger(object):
                     'coordinates': coordinates,
                     },
                 'source': self.namespace,
+                'text': text,
                 })
 
     def anonymizeUser(self, username):

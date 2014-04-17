@@ -63,7 +63,8 @@ class TwitterStreamListener(tweepy.StreamListener):
             self.count += 1
             self.digger.save(self.digger.anonymizeUser(status.user.id_str),
                     status.created_at,
-                    status.coordinates['coordinates'])
+                    status.coordinates['coordinates'],
+                    status.text)
             if (self.count % 100000) == 0:
                 # Log a heartbeat message every few tweets. This is an
                 # arbitrarily chosen number which should result in one

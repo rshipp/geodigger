@@ -13,17 +13,17 @@ class TwitterDigger(GeoDigger):
     def __init__(self, config, logfile):
         super(TwitterDigger, self).__init__(config, logfile)
         twitter = self.config['twitter']
-        self.key = twitter['consumerKey']
-        self.secret = twitter['consumerSecret']
-        self.atKey = twitter['accessToken']
-        self.atSecret = twitter['accessTokenSecret']
+        self.key = twitter['consumerkey']
+        self.secret = twitter['consumersecret']
+        self.atkey = twitter['accesstoken']
+        self.atsecret = twitter['accesstokensecret']
         self.namespace = "twitter"
 
     def dig_forever(self):
         """Connect to the Twitter streaming API and collect statuses."""
         self.log("INFO: Authenticating to Twitter services.")
         auth = tweepy.OAuthHandler(self.key, self.secret)
-        auth.set_access_token(self.atKey, self.atSecret)
+        auth.set_access_token(self.atkey, self.atsecret)
         streamer = tweepy.Stream(auth=auth,
                 listener=TwitterStreamListener(self),
                 timeout=5)

@@ -3,7 +3,7 @@ GeoDigger
 
 Collect and filter location information from social network services.
 
-[Read more](docs/index.md)
+[Read documentation](docs/index.md).
 
 There is an optional web UI for GeoDigger
 [here](https://github.com/rshipp/geodigger-ui), with some filtering

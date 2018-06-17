@@ -48,6 +48,22 @@ To install the GeoDigger script and libraries, use:
 
     `geodigger --conf MY_CONFIG_FILE --log MY_LOG_FILE`
 
+```
+usage: geodigger [-h] [--log LOGFILE] [--config CONFIGFILE] [--source SOURCE]
+                 [--list [LIST]]
+
+Collect and filter location information from social network services.
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --log LOGFILE        file to store logs, default=geodigger.log
+  --config CONFIGFILE  geodigger configuration file, default=geodigger.conf
+  --source SOURCE      the social network from which to collect data
+  --list [LIST]        list available sources
+
+report bugs to: https://github.com/rshipp/geodigger/issues
+```
+
 
 ## Support
 

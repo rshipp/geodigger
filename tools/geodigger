@@ -20,7 +20,7 @@ def main():
             description="Collect and filter location information from \
                 social network services.",
             epilog = "report bugs to: \
-                https://github.com/GeoDigger/geodigger/issues",
+                https://github.com/rshipp/geodigger/issues",
     )
     parser.add_argument('--log', dest='logfile', default=LOGFILE,
                        help='file to store logs, default=geodigger.log')

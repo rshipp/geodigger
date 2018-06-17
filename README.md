@@ -5,6 +5,10 @@ Collect and filter location information from social network services.
 
 [Read more](docs/index.md)
 
+There is an optional web UI for GeoDigger
+[here](https://github.com/rshipp/geodigger-ui), with some filtering
+features.
+
 ## Requirements
 
 GeoDigger has only been tested on Linux. It may or may not work on

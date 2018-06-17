@@ -20,9 +20,9 @@ setup(
     license='BSD New',
     description='Collect and filter location information from social network services.',
     long_description=README,
-    url='https://github.com/GeoDigger/geodigger',
+    url='https://github.com/rshipp/geodigger',
     author='Ryan Shipp',
-    author_email='rshipp@mines.edu',
+    author_email='python@rshipp.com',
     classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: End Users/Desktop',

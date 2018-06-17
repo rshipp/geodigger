@@ -23,9 +23,7 @@ Windows or Mac OSX systems.
 
 To install the GeoDigger script and libraries, use:
 
-    git clone git://github.com/GeoDigger/geodigger.git
-    cd geodigger
-    sudo python setup.py install
+    python setup.py install
 
 ## Usage
 
@@ -47,23 +45,10 @@ To install the GeoDigger script and libraries, use:
     `geodigger --conf MY_CONFIG_FILE --log MY_LOG_FILE`
 
 
-## Documentation and Papers
-
-The GeoDigger documentation describes the reasoning and technologies
-behind the project, and explains how to extend GeoDigger functionality.
-You can read the documentation online [here](docs/index.md) (or, if you
-prefer a single page, try [this](docs/onepage.md)).
-
-GeoDigger is the product of an ongoing research project; links to
-technical reports will be provided as they become available.
-
 ## Support
 
 To submit bug reports, use GeoDigger's GitHub
-[issues](https://github.com/GeoDigger/geodigger/issues) page.
-
-If you have questions or comments about using GeoDigger, you can send
-them to `rshipp at mines dot edu`.
+[issues](https://github.com/rshipp/geodigger/issues) page.
 
 ## Hacking
 
